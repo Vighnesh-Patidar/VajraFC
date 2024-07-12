@@ -13,6 +13,7 @@ Current Progress PID file almost complete, need to properly format the output,
 need to tune EKF and add sensor isolation and input filtering simultaneously 
 
 ##CONNECTIONS :-
+##In the latest code push, I messed up the pins, so I will have to check the pin numbers all again.
     Since we are using SPI communication, connections will be made accordingly. Current code is set for the following config:-
         - CS - pin number 10
         - SDI - pin number 11
@@ -21,4 +22,3 @@ need to tune EKF and add sensor isolation and input filtering simultaneously
         - Vin - 5V pin
         - 3V3 - 3.3V pin
         - GND - Ground pin 
-##In the latest code push, I messed up the pins, so I will have to check the pin numbers all again.
