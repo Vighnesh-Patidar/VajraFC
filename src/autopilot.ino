@@ -7,17 +7,11 @@
 #include "pid.h"
 #include "motorcontrol.h"
 
-// Pin definitions for LSM9DS1 using hardware SPI
-#define LSM9DS1_XGCS 24  // Chip select for accelerometer/gyroscope
-#define LSM9DS1_MCS 25   // Chip select for magnetometer
+// Initialize LSM9DS1 sensor using I2C
+Adafruit_LSM9DS1 lsm = Adafruit_LSM9DS1();
 
 // Pin definitions for BMP280 using hardware SPI
 #define BMP_CS 10
-
-// Initialize LSM9DS1 sensor using hardware SPI
-Adafruit_LSM9DS1 lsm = Adafruit_LSM9DS1(LSM9DS1_XGCS, LSM9DS1_MCS);
-
-// Initialize BMP280 sensor using hardware SPI
 Adafruit_BMP280 bmp(BMP_CS);
 
 // Initialize EKF
@@ -71,7 +65,7 @@ void setup() {
 
     Serial.println("LSM9DS1 & BMP280 Data Read Demo");
 
-    // Initialize LSM9DS1 sensor with hardware SPI
+    // Initialize LSM9DS1 sensor with I2C
     if (!lsm.begin()) {
         Serial.println("Oops ... unable to initialize the LSM9DS1. Check your wiring!");
         while (1);
